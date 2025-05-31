@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>My Seed 🌱</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Estilo para el logo */
+    #logo {
+      position: fixed;
+      top: 15px;
+      left: 15px;
+      width: 50px;
+      height: 50px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      object-fit: contain;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <img src="icono.ico" alt="My Seed Logo" id="logo" />
+  
+  <div id="container">
+    <div id="panel">
+      <h1>My Seed 🌿</h1>
+      <select id="cultivo">
+        <option disabled selected>Seleccionar cultivo</option>
+        <option>Remolacha</option>
+        <option>Zanahorias</option>
+        <option>Rabanitos</option>
+        <option>Orégano</option>
+        <option>Menta</option>
+        <option>Romero</option>
+        <option>Lavanda</option>
+      </select>
+      <select id="fase">
+        <option disabled selected>Seleccionar fase</option>
+        <option>Siembra / Ubicación</option>
+        <option>Suelo / Riego</option>
+        <option>Cosecha</option>
+      </select>
+      <button onclick="mostrar()">Ver recomendación</button>
+      <p id="resultado"></p>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
