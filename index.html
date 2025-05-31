@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>My Seed 🌱</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
     /* Estilo para el logo */
     #logo {
@@ -17,34 +17,61 @@
       object-fit: contain;
       z-index: 1000;
     }
+
+    /* Contenedor de banderas */
+    #flags-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      gap: 8px;
+    }
+
+    #flags-container img {
+      width: 32px;
+      height: 32px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+      user-select: none;
+      transition: opacity 0.3s ease;
+    }
   </style>
 </head>
 <body>
   <img src="icono.ico" alt="My Seed Logo" id="logo" />
-  
+
+  <!-- Contenedor banderas -->
+  <div id="flags-container">
+    <img src="españa.png" alt="Español" id="flag-es" title="Español" />
+    <img src="eeuu.png" alt="English" id="flag-en" title="English" />
+  </div>
+
   <div id="container">
     <div id="panel">
-      <h1>My Seed 🌿</h1>
+      <h1 id="titulo">My Seed 🌿</h1>
       <select id="cultivo">
-        <option disabled selected>Seleccionar cultivo</option>
-        <option>Remolacha</option>
-        <option>Zanahorias</option>
-        <option>Rabanitos</option>
-        <option>Orégano</option>
-        <option>Menta</option>
-        <option>Romero</option>
-        <option>Lavanda</option>
+        <option disabled selected value="" id="opt-cultivo">Seleccionar cultivo</option>
+        <option value="Remolacha">Remolacha</option>
+        <option value="Zanahorias">Zanahorias</option>
+        <option value="Rabanitos">Rabanitos</option>
+        <option value="Orégano">Orégano</option>
+        <option value="Menta">Menta</option>
+        <option value="Romero">Romero</option>
+        <option value="Lavanda">Lavanda</option>
       </select>
       <select id="fase">
-        <option disabled selected>Seleccionar fase</option>
-        <option>Siembra / Ubicación</option>
-        <option>Suelo / Riego</option>
-        <option>Cosecha</option>
+        <option disabled selected value="" id="opt-fase">Seleccionar fase</option>
+        <option value="Siembra / Ubicación">Siembra / Ubicación</option>
+        <option value="Suelo / Riego">Suelo / Riego</option>
+        <option value="Cosecha">Cosecha</option>
       </select>
-      <button onclick="mostrar()">Ver recomendación</button>
+      <button id="btn-ver" onclick="mostrar()">Ver recomendación</button>
       <p id="resultado"></p>
     </div>
   </div>
+
   <script src="renderer.js"></script>
 </body>
 </html>
